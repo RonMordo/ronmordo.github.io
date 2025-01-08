@@ -6,6 +6,7 @@
 
 html {
     font-size: 18px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -18,16 +19,21 @@ header {
     display: flex;
     flex-direction: column;
     background-image: url("./images/banner_background.jpg");
-    height: 40rem;
+    height: 45rem;
 }
 
 nav {
     display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     height: 5rem;
     font-weight: 600;
     font-size: 1.3rem;
+    background-color: hsla(0, 0%, 60%, 0.9);
+    z-index: 1;
 }
 
 #home {
@@ -61,12 +67,34 @@ nav {
 #navigation ul a {
     text-decoration: none;
     color: white;
+    padding: 1rem;
+}
+
+#navigation ul a:hover {
+    border: 1px solid transparent;
+    border-radius: 3rem;
+    background-color: rgba(173, 165, 165, 0.7);
 }
 
 #banner {
     align-self: center;
-    padding-top: 8rem;
     font-size: 2rem;
+    padding-top: 15rem;
+}
+
+#cursor {
+    border-right: 2px solid white;
+    animation: blink-cursor 0.5s step-end infinite;
+    display: inline-block;
+    width: 0;
+    height: 1em;
+    vertical-align: middle;
+}
+
+@keyframes blink-cursor {
+    50% {
+        border-color: transparent;
+    }
 }
 
 #about {
